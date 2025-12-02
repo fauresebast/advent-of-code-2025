@@ -1,9 +1,9 @@
 # 🎄 Advent of Code 2025 🎄
 
-TOTAL : 2/24 - 8%
+TOTAL : 4/24 - 17%
 
 - Day 01: ⭐️⭐️
-- Day 02:
+- Day 02: ⭐️⭐️
 - Day 03:
 - Day 04:
 - Day 05:

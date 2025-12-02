@@ -1,7 +1,7 @@
 module Day1
   def self.parse(input)
     input.lines.map do |line|
-      { direction: line[0], steps: line[1..].to_i }
+      {direction: line[0], steps: line[1..].to_i}
     end
   end
 
@@ -15,7 +15,7 @@ module Day1
       when "R"
         position += instruction[:steps]
       end
-      position = position % 100
+      position %= 100
       password += 1 if position.zero?
     end
     password
@@ -36,7 +36,7 @@ module Day1
       r = Range.new(*[prev_position, position].sort)
       password += r.count { |x| x % 100 == 0 }
       password -= 1 if prev_position.zero?
-      position = position % 100
+      position %= 100
     end
     password
   end
