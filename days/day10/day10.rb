@@ -2,8 +2,8 @@ module Day10
   def self.parse(input)
     input.lines.map do |line|
       [
-        line[/[\.#]+/],
-        line.scan(/(?<=\()[\d,]+?(?=\))/).map{|button| button.split(",").map(&:to_i)},
+        line[/[.#]+/],
+        line.scan(/(?<=\()[\d,]+?(?=\))/).map { |button| button.split(",").map(&:to_i) },
         line[/(?<={)[\d,]+?(?=})/].split(",").map(&:to_i)
       ]
     end
@@ -14,7 +14,7 @@ module Day10
     parse(input).sum do |machine|
       lights_goal, buttons, _ = machine
       search_for_combination(
-        lights_goal.chars.map{|c| c== "#"},
+        lights_goal.chars.map { |c| c == "#" },
         buttons,
         0,
         50,
@@ -29,7 +29,7 @@ module Day10
     return -1 if depth >= best_depth
 
     buttons.each do |button|
-      new_state = state.map.with_index {|l, i| button.include?(i) ? !l : l}
+      new_state = state.map.with_index { |l, i| button.include?(i) ? !l : l }
       if @@mem[new_state]
         best_depth = depth + @@mem[new_state] + 1
       end
